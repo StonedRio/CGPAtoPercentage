@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:fillViewport="true"
+    tools:context=".fragments.HomeFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="0dp"
+            app:layout_constraintWidth_percent="0.8"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/_24sdp"
+            android:gravity="center"
+            android:textStyle="bold"
+            android:text="CGPA To Percentage Calculator"
+            android:textColor="@color/primary"
+            android:layout_marginTop="@dimen/_30sdp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_out_of_four"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/_4_0_cgpa_to_percentage"
+            android:textSize="@dimen/_16ssp"
+            android:layout_marginTop="@dimen/_50sdp"
+            app:layout_constraintWidth_percent="0.9"
+            android:padding="@dimen/_10sdp"
+            android:backgroundTint="@color/primary"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/title" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_out_of_five"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/_5_0_cgpa_to_percentage"
+            android:textSize="@dimen/_16ssp"
+            android:layout_marginTop="@dimen/_20sdp"
+            app:layout_constraintWidth_percent="0.9"
+            android:padding="@dimen/_10sdp"
+            android:backgroundTint="@color/primary"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btn_out_of_four" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_out_of_ten"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/_10_0_cgpa_to_percentage"
+            android:textSize="@dimen/_16ssp"
+            android:layout_marginTop="@dimen/_20sdp"
+            app:layout_constraintWidth_percent="0.9"
+            android:padding="@dimen/_10sdp"
+            android:backgroundTint="@color/primary"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btn_out_of_five" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.core.widget.NestedScrollView>
