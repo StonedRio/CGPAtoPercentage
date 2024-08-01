@@ -7,11 +7,11 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentTransaction
 import com.example.cgpatopercentage.R
-import com.example.cgpatopercentage.databinding.FragmentHomeBinding
+import com.example.cgpatopercentage.databinding.FragmentCgpaToPercentageBinding
 
-class HomeFragment : Fragment() {
+class CgpaToPercentageFragment : Fragment() {
 
-    private var _binding: FragmentHomeBinding? = null
+    private var _binding: FragmentCgpaToPercentageBinding? = null
     private val binding get() = _binding!!
 
     override fun onCreateView(
@@ -19,32 +19,46 @@ class HomeFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        _binding = FragmentHomeBinding.inflate(inflater, container, false)
+        _binding = FragmentCgpaToPercentageBinding.inflate(inflater, container, false)
         val view = binding.root
 
-        binding.btnCgpaToPercentage.setOnClickListener {
+        binding.backIcon.setOnClickListener {
             val transaction: FragmentTransaction = parentFragmentManager.beginTransaction()
-            transaction.replace(R.id.frame_layout, CgpaToPercentageFragment())
+            transaction.replace(R.id.frame_layout, HomeFragment())
             transaction.addToBackStack(null)
             transaction.commit()
         }
 
-        binding.btnPercentageToCgpa.setOnClickListener {
+        binding.btnOutOfFour.setOnClickListener {
             val transaction: FragmentTransaction = parentFragmentManager.beginTransaction()
-            transaction.replace(R.id.frame_layout, PercentageToCgpaFragment())
+            transaction.replace(R.id.frame_layout, OutOfFourFragment())
             transaction.addToBackStack(null)
             transaction.commit()
         }
 
-        binding.btnGpaToCgpa.setOnClickListener {
+        binding.btnOutOfFive.setOnClickListener {
             val transaction: FragmentTransaction = parentFragmentManager.beginTransaction()
-            transaction.replace(R.id.frame_layout, GpaToCgpaFragment())
+            transaction.replace(R.id.frame_layout, OutOfFiveFragment())
             transaction.addToBackStack(null)
             transaction.commit()
         }
 
+
+        binding.btnOutOfTen.setOnClickListener {
+            val transaction: FragmentTransaction = parentFragmentManager.beginTransaction()
+            transaction.replace(R.id.frame_layout, OutOfTenFragment())
+            transaction.addToBackStack(null)
+            transaction.commit()
+        }
 
 
         return view
     }
+
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
+    }
+
 }

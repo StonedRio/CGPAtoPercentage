@@ -7,7 +7,6 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentTransaction
 import com.example.cgpatopercentage.R
-import com.example.cgpatopercentage.databinding.FragmentOutOfFourBinding
 import com.example.cgpatopercentage.databinding.FragmentOutOfTenBinding
 
 class OutOfTenFragment : Fragment() {
@@ -25,7 +24,7 @@ class OutOfTenFragment : Fragment() {
 
         binding.backIcon.setOnClickListener {
             val transaction: FragmentTransaction = parentFragmentManager.beginTransaction()
-            transaction.replace(R.id.frame_layout, HomeFragment())
+            transaction.replace(R.id.frame_layout, CgpaToPercentageFragment())
             transaction.addToBackStack(null)
             transaction.commit()
         }

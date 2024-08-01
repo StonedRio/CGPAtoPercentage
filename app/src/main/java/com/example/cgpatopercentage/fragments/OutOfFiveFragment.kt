@@ -24,7 +24,7 @@ class OutOfFiveFragment : Fragment() {
 
         binding.backIcon.setOnClickListener {
             val transaction: FragmentTransaction = parentFragmentManager.beginTransaction()
-            transaction.replace(R.id.frame_layout, HomeFragment())
+            transaction.replace(R.id.frame_layout, CgpaToPercentageFragment())
             transaction.addToBackStack(null)
             transaction.commit()
         }

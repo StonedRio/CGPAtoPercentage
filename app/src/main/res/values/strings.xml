@@ -95,4 +95,17 @@
         "For example, position the FAB to one side of stream of a cards so the FAB won’t interfere "
         "when a user tries to pick up one of cards.\n\n"
     </string>
+    <string name="percentage_to_cgpa_calculator">Percentage To CGPA Calculator</string>
+    <string name="percentage_to_4_grading">Percentage To 4 grading</string>
+    <string name="percentage_to_5_grading">Percentage To 5 grading</string>
+    <string name="percentage_to_10_grading">Percentage To 10 grading</string>
+    <string name="convert_to_cgpa">Convert to CGPA</string>
+    <string name="cgpa">CGPA</string>
+    <string name="enter_percentage">Enter Percentage</string>
+    <string name="percentage_to_4_0_grading_scale">Percentage to 4.0 Grading Scale</string>
+    <string name="percentage_to_5_0_grading_scale">Percentage to 5.0 Grading Scale</string>
+    <string name="percentage_to_10_0_grading_scale">Percentage to 10.0 Grading Scale</string>
+    <string name="percentage_to_cgpa">Percentage to CGPA</string>
+    <string name="cgpa_to_percentage">CGPA to Percentage</string>
+    <string name="select_calculator_from_the_following">Select Calculator from the following</string>
 </resources>

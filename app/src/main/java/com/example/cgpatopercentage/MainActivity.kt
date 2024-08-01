@@ -1,9 +1,8 @@
 package com.example.cgpatopercentage
 
-import android.os.Build
+
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.WindowManager
 import com.example.cgpatopercentage.databinding.ActivityMainBinding
 import com.example.cgpatopercentage.fragments.HomeFragment
 
