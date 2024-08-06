@@ -5,11 +5,20 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:fillViewport="true"
-    tools:context=".fragments.HomeFragment">
+    tools:context=".fragments.PercentageToSgpaFragment">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/back_icon"
+            android:layout_width="@dimen/_20sdp"
+            android:layout_height="@dimen/_20sdp"
+            android:src="@drawable/ic_arrow_back"
+            android:layout_margin="@dimen/_15sdp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"/>
 
         <TextView
             android:id="@+id/title"
@@ -19,18 +28,18 @@
             android:textSize="@dimen/_24sdp"
             android:gravity="center"
             android:textStyle="bold"
-            android:text="@string/select_calculator_from_the_following"
+            android:text="@string/percentage_to_sgpa_calculator"
             android:textColor="@color/primary"
             android:layout_marginTop="@dimen/_30sdp"
-            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/back_icon"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent" />
 
         <com.google.android.material.button.MaterialButton
-            android:id="@+id/btn_cgpa_to_percentage"
+            android:id="@+id/btn_percentage_to_sgpa_four"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:text="@string/cgpa_to_percentage"
+            android:text="@string/percentage_to_4_grading_sgpa"
             android:textSize="@dimen/_16ssp"
             android:layout_marginTop="@dimen/_50sdp"
             app:layout_constraintWidth_percent="0.9"
@@ -41,65 +50,33 @@
             app:layout_constraintTop_toBottomOf="@+id/title" />
 
         <com.google.android.material.button.MaterialButton
-            android:id="@+id/btn_percentage_to_cgpa"
+            android:id="@+id/btn_percentage_to_sgpa_five"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:text="@string/percentage_to_cgpa"
+            android:text="@string/percentage_to_5_grading_sgpa"
             android:textSize="@dimen/_16ssp"
-            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_marginTop="@dimen/_20sdp"
             app:layout_constraintWidth_percent="0.9"
             android:padding="@dimen/_10sdp"
             android:backgroundTint="@color/primary"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/btn_cgpa_to_percentage" />
-
+            app:layout_constraintTop_toBottomOf="@+id/btn_percentage_to_sgpa_four" />
 
         <com.google.android.material.button.MaterialButton
-            android:id="@+id/btn_gpa_to_cgpa"
+            android:id="@+id/btn_percentage_to_sgpa_ten"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:text="@string/gpa_to_cgpa"
+            android:text="@string/percentage_to_10_grading_sgpa"
             android:textSize="@dimen/_16ssp"
-            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_marginTop="@dimen/_20sdp"
             app:layout_constraintWidth_percent="0.9"
             android:padding="@dimen/_10sdp"
             android:backgroundTint="@color/primary"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/btn_percentage_to_cgpa" />
-
-
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/btn_percentage_to_sgpa"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:text="@string/percentage_to_sgpa"
-            android:textSize="@dimen/_16ssp"
-            android:layout_marginTop="@dimen/_10sdp"
-            app:layout_constraintWidth_percent="0.9"
-            android:padding="@dimen/_10sdp"
-            android:backgroundTint="@color/primary"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/btn_gpa_to_cgpa" />
-
-
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/btn_sgpa_to_percentage"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:text="@string/sgpa_to_percentage"
-            android:textSize="@dimen/_16ssp"
-            android:layout_marginTop="@dimen/_10sdp"
-            app:layout_constraintWidth_percent="0.9"
-            android:padding="@dimen/_10sdp"
-            android:backgroundTint="@color/primary"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/btn_percentage_to_sgpa" />
+            app:layout_constraintTop_toBottomOf="@+id/btn_percentage_to_sgpa_five" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
-
-    </androidx.core.widget.NestedScrollView>
+</androidx.core.widget.NestedScrollView>

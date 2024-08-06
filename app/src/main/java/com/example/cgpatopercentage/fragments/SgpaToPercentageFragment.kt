@@ -8,10 +8,11 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentTransaction
 import com.example.cgpatopercentage.R
 import com.example.cgpatopercentage.databinding.FragmentHomeBinding
+import com.example.cgpatopercentage.databinding.FragmentSgpaToPercentageBinding
 
-class HomeFragment : Fragment() {
+class SgpaToPercentageFragment : Fragment() {
 
-    private var _binding: FragmentHomeBinding? = null
+    private var _binding: FragmentSgpaToPercentageBinding? = null
     private val binding get() = _binding!!
 
     override fun onCreateView(
@@ -19,45 +20,41 @@ class HomeFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        _binding = FragmentHomeBinding.inflate(inflater, container, false)
+
+        _binding = FragmentSgpaToPercentageBinding.inflate(inflater, container, false)
         val view = binding.root
 
-        binding.btnCgpaToPercentage.setOnClickListener {
+        binding.backIcon.setOnClickListener {
             val transaction: FragmentTransaction = parentFragmentManager.beginTransaction()
-            transaction.replace(R.id.frame_layout, CgpaToPercentageFragment())
-            transaction.addToBackStack(null)
-            transaction.commit()
-        }
-
-        binding.btnPercentageToCgpa.setOnClickListener {
-            val transaction: FragmentTransaction = parentFragmentManager.beginTransaction()
-            transaction.replace(R.id.frame_layout, PercentageToCgpaFragment())
-            transaction.addToBackStack(null)
-            transaction.commit()
-        }
-
-        binding.btnGpaToCgpa.setOnClickListener {
-            val transaction: FragmentTransaction = parentFragmentManager.beginTransaction()
-            transaction.replace(R.id.frame_layout, GpaToCgpaFragment())
-            transaction.addToBackStack(null)
-            transaction.commit()
-        }
-
-        binding.btnPercentageToSgpa.setOnClickListener {
-            val transaction: FragmentTransaction = parentFragmentManager.beginTransaction()
-            transaction.replace(R.id.frame_layout, PercentageToSgpaFragment())
-            transaction.addToBackStack(null)
-            transaction.commit()
-        }
-
-        binding.btnSgpaToPercentage.setOnClickListener {
-            val transaction: FragmentTransaction = parentFragmentManager.beginTransaction()
-            transaction.replace(R.id.frame_layout, SgpaToPercentageFragment())
+            transaction.replace(R.id.frame_layout, HomeFragment())
             transaction.addToBackStack(null)
             transaction.commit()
         }
 
 
+
+
+        binding.btnSgpaFourToPercentage.setOnClickListener {
+            val transaction: FragmentTransaction = parentFragmentManager.beginTransaction()
+            transaction.replace(R.id.frame_layout, FourGradingSgpaToPercentageFragment() )
+            transaction.addToBackStack(null)
+            transaction.commit()
+        }
+
+        binding.btnSgpaFiveToPercentage.setOnClickListener {
+            val transaction: FragmentTransaction = parentFragmentManager.beginTransaction()
+            transaction.replace(R.id.frame_layout,  FiveGradingSgpaToPercentageFragment() )
+            transaction.addToBackStack(null)
+            transaction.commit()
+        }
+
+
+        binding.btnSgpaTenToPercentage.setOnClickListener {
+            val transaction: FragmentTransaction = parentFragmentManager.beginTransaction()
+            transaction.replace(R.id.frame_layout, TenGradingSgpaToPercentageFragment() )
+            transaction.addToBackStack(null)
+            transaction.commit()
+        }
 
         return view
     }

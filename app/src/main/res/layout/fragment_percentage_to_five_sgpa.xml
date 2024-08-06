@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:fillViewport="true"
-    tools:context=".fragments.OutOfFourFragment">
+    tools:context=".fragments.PercentageToFiveSgpaFragment">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -22,12 +22,12 @@
 
         <TextView
             android:id="@+id/title"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="4.0 Grading Scale"
+            android:layout_marginHorizontal="@dimen/_20sdp"
+            android:text="Percentage to 5.0 Grading SGPA"
             android:textSize="@dimen/_24ssp"
             android:textStyle="bold"
-            android:gravity="center"
             android:textColor="@color/primary"
             android:layout_marginTop="@dimen/_20sdp"
             app:layout_constraintEnd_toEndOf="parent"
@@ -35,35 +35,36 @@
             app:layout_constraintTop_toBottomOf="@+id/back_icon" />
 
         <EditText
-            android:id="@+id/cgpa_edittext"
+            android:id="@+id/percentage_edittext"
             android:layout_width="0dp"
-            app:layout_constraintWidth_percent="0.9"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/_30sdp"
+            android:layout_marginTop="40dp"
             android:background="@drawable/custom_edittext_background"
-            android:hint="Enter Your CGPA"
+            android:hint="@string/enter_percentage"
             android:inputType="numberDecimal"
+            android:padding="@dimen/_15sdp"
             android:textColor="@color/primary"
             android:textColorHint="@color/primary"
-            android:padding="@dimen/_15sdp"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.39"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/title" />
+            app:layout_constraintTop_toBottomOf="@+id/title"
+            app:layout_constraintWidth_percent="0.9" />
 
         <TextView
-            android:id="@+id/percentage_textview"
+            android:id="@+id/sgpa_textview"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/_20sdp"
             android:background="@drawable/custom_edittext_background"
-            android:hint="Percentage"
+            android:hint="@string/sgpa"
             android:textColor="@color/primary"
             android:textColorHint="@color/primary"
             android:textSize="@dimen/_16ssp"
             android:padding="@dimen/_15sdp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/cgpa_edittext"
+            app:layout_constraintTop_toBottomOf="@+id/percentage_edittext"
             app:layout_constraintWidth_percent="0.9" />
 
         <com.google.android.material.button.MaterialButton
@@ -73,11 +74,11 @@
             android:backgroundTint="@color/primary"
             android:padding="@dimen/_10sdp"
             android:layout_marginTop="@dimen/_20sdp"
-            android:text="@string/convert_to_percentage"
+            android:text="Convert to SGPA"
             android:textSize="@dimen/_16ssp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/percentage_textview"
+            app:layout_constraintTop_toBottomOf="@+id/sgpa_textview"
             app:layout_constraintWidth_percent="0.9" />
 
         <com.google.android.material.button.MaterialButton
@@ -93,8 +94,6 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/btn_convert"
             app:layout_constraintWidth_percent="0.9" />
-
-
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

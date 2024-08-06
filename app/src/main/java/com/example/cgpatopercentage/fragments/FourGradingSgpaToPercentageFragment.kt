@@ -7,11 +7,12 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentTransaction
 import com.example.cgpatopercentage.R
-import com.example.cgpatopercentage.databinding.FragmentOutOfFiveBinding
+import com.example.cgpatopercentage.databinding.FragmentFourGradingSgpaToPercentageBinding
+import com.example.cgpatopercentage.databinding.FragmentOutOfFourBinding
 
-class OutOfFiveFragment : Fragment() {
+class FourGradingSgpaToPercentageFragment : Fragment() {
 
-    private var _binding: FragmentOutOfFiveBinding? = null
+    private var _binding: FragmentFourGradingSgpaToPercentageBinding? = null
     private val binding get() = _binding!!
 
     override fun onCreateView(
@@ -19,22 +20,24 @@ class OutOfFiveFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        _binding = FragmentOutOfFiveBinding.inflate(inflater, container, false)
+        _binding = FragmentFourGradingSgpaToPercentageBinding.inflate(inflater, container, false)
         val view = binding.root
+
 
         binding.backIcon.setOnClickListener {
             val transaction: FragmentTransaction = parentFragmentManager.beginTransaction()
-            transaction.replace(R.id.frame_layout, CgpaToPercentageFragment())
+            transaction.replace(R.id.frame_layout, SgpaToPercentageFragment())
             transaction.addToBackStack(null)
             transaction.commit()
         }
 
+
         binding.btnConvert.setOnClickListener {
-            val cgpaText = binding.cgpaEdittext.text.toString()
-            if (cgpaText.isNotEmpty()) {
-                val cgpa = cgpaText.toDoubleOrNull()
-                if (cgpa != null && cgpa < 5.1) {
-                    val percentage = cgpa * 20
+            val sgpaText = binding.sgpaEdittext.text.toString()
+            if (sgpaText.isNotEmpty()) {
+                val sgpa = sgpaText.toDoubleOrNull()
+                if (sgpa != null && sgpa < 4.1 ) {
+                    val percentage = (sgpa * 25)-7.5
                     binding.percentageTextview.text = percentage.toString()+"%"
                 } else {
                     binding.percentageTextview.text = "Invalid CGPA"
@@ -45,18 +48,18 @@ class OutOfFiveFragment : Fragment() {
         }
 
         binding.btnReset.setOnClickListener {
-            binding.cgpaEdittext.setText("")
+            binding.sgpaEdittext.setText("")
             binding.percentageTextview.setText("")
         }
-
-
 
 
         return view
     }
 
+
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
     }
+
 }

@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:fillViewport="true"
-    tools:context=".fragments.OutOfFourFragment">
+    tools:context=".fragments.FourGradingSgpaToPercentageFragment">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -22,9 +22,10 @@
 
         <TextView
             android:id="@+id/title"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
+            app:layout_constraintWidth_percent="0.8"
             android:layout_height="wrap_content"
-            android:text="4.0 Grading Scale"
+            android:text="4.0 Grading SGPA to Percentage"
             android:textSize="@dimen/_24ssp"
             android:textStyle="bold"
             android:gravity="center"
@@ -35,13 +36,13 @@
             app:layout_constraintTop_toBottomOf="@+id/back_icon" />
 
         <EditText
-            android:id="@+id/cgpa_edittext"
+            android:id="@+id/sgpa_edittext"
             android:layout_width="0dp"
             app:layout_constraintWidth_percent="0.9"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/_30sdp"
             android:background="@drawable/custom_edittext_background"
-            android:hint="Enter Your CGPA"
+            android:hint="Enter Your SGPA"
             android:inputType="numberDecimal"
             android:textColor="@color/primary"
             android:textColorHint="@color/primary"
@@ -63,7 +64,7 @@
             android:padding="@dimen/_15sdp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/cgpa_edittext"
+            app:layout_constraintTop_toBottomOf="@+id/sgpa_edittext"
             app:layout_constraintWidth_percent="0.9" />
 
         <com.google.android.material.button.MaterialButton
@@ -97,5 +98,6 @@
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
+
 
 </androidx.core.widget.NestedScrollView>

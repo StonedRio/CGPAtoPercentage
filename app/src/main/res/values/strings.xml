@@ -108,4 +108,14 @@
     <string name="percentage_to_cgpa">Percentage to CGPA</string>
     <string name="cgpa_to_percentage">CGPA to Percentage</string>
     <string name="select_calculator_from_the_following">Select Calculator from the following</string>
+    <string name="percentage_to_sgpa_calculator">Percentage to SGPA Calculator</string>
+    <string name="percentage_to_4_grading_sgpa">Percentage to 4 Grading SGPA</string>
+    <string name="percentage_to_5_grading_sgpa">Percentage to 5 Grading SGPA</string>
+    <string name="percentage_to_10_grading_sgpa">Percentage to 10 Grading SGPA</string>
+    <string name="percentage_to_sgpa">Percentage to SGPA</string>
+    <string name="gpa_to_cgpa">GPA to CGPA</string>
+    <string name="sgpa">SGPA</string>
+    <string name="sgpa_to_percentage">SGPA to Percentage</string>
+    <string name="_4_grading_sgpa_to_percentage">4 Grading SGPA to Percentage</string>
+    <string name="_5_grading_sgpa_to_percentage">5 Grading SGPA to Percentage</string>
 </resources>

@@ -7,11 +7,11 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentTransaction
 import com.example.cgpatopercentage.R
-import com.example.cgpatopercentage.databinding.FragmentPercentageToTenBinding
+import com.example.cgpatopercentage.databinding.FragmentTenGradingSgpaToPercentageBinding
 
-class PercentageToTenFragment : Fragment() {
+class TenGradingSgpaToPercentageFragment : Fragment() {
 
-    private var _binding: FragmentPercentageToTenBinding? = null
+    private var _binding: FragmentTenGradingSgpaToPercentageBinding? = null
     private val binding get() = _binding!!
 
     override fun onCreateView(
@@ -19,34 +19,35 @@ class PercentageToTenFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        _binding = FragmentPercentageToTenBinding.inflate(inflater,container,false)
-        val view=binding.root
+        _binding = FragmentTenGradingSgpaToPercentageBinding.inflate(inflater, container, false)
+        val view = binding.root
 
         binding.backIcon.setOnClickListener {
             val transaction: FragmentTransaction = parentFragmentManager.beginTransaction()
-            transaction.replace(R.id.frame_layout, PercentageToCgpaFragment())
+            transaction.replace(R.id.frame_layout, SgpaToPercentageFragment())
             transaction.addToBackStack(null)
             transaction.commit()
         }
 
+
         binding.btnConvert.setOnClickListener {
-            val percentageText = binding.percentageEdittext.text.toString()
-            if (percentageText.isNotEmpty()) {
-                val percentage = percentageText.toDoubleOrNull()
-                if (percentage != null && percentage < 101 ) {
-                    val cgpa = percentage / 10
-                    binding.cgpaTextview.text = cgpa.toString()
+            val sgpaText = binding.sgpaEdittext.text.toString()
+            if (sgpaText.isNotEmpty()) {
+                val sgpa = sgpaText.toDoubleOrNull()
+                if (sgpa != null && sgpa < 10.1 ) {
+                    val percentage = (sgpa * 10)-7.5
+                    binding.percentageTextview.text = percentage.toString()+"%"
                 } else {
-                    binding.cgpaTextview.text = "Invalid perventage"
+                    binding.percentageTextview.text = "Invalid CGPA"
                 }
             } else {
-                binding.cgpaTextview.text = "Enter Percentage"
+                binding.percentageTextview.text = "Enter CGPA"
             }
         }
 
         binding.btnReset.setOnClickListener {
-            binding.percentageEdittext.setText("")
-            binding.cgpaTextview.setText("")
+            binding.sgpaEdittext.setText("")
+            binding.percentageTextview.setText("")
         }
 
 
